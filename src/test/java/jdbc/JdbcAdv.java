@@ -54,11 +54,11 @@ public class JdbcAdv {
 
 //       List<Map<String, Object> > empList = new ArrayList<>();
 
-        Map<String, Object> rowMap = new HashMap<>();
+
         List<Map<String, Object>> emplList = new ArrayList<>();
 
         while (resultSet.next()){
-
+            Map<String, Object> rowMap = new HashMap<>();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
                 rowMap.put(metaData.getColumnName(i),resultSet.getObject(i));
             }
@@ -77,11 +77,11 @@ public class JdbcAdv {
         ResultSet resultSet = JdbcUtils.query("select * from employees");
         ResultSetMetaData metaData = resultSet.getMetaData();
 
-        Map<String, Object> rowMap = new HashMap<>();
+
         List<Map<String, Object>> emplList = new ArrayList<>();
 
         while (resultSet.next()){
-
+            Map<String, Object> rowMap = new HashMap<>();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
                 rowMap.put(metaData.getColumnName(i),resultSet.getObject(i));
             }
